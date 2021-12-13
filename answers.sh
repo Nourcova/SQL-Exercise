@@ -46,3 +46,22 @@ SET Graduation="08/09/2018"
 WHERE Name="Layal";
 
 DELETE from students WHERE name="ahmad";
+
+#Joins
+
+SELECT employees.Name
+FROM employees
+INNER JOIN companies
+ON companies.data > 2000;
+
+SELECT employees.Name
+FROM employees
+INNER JOIN companies
+ON companies.name = employees.Company
+WHERE companies.Date>2000;
+
+SELECT companies.Name
+FROM employees
+INNER JOIN companies
+ON companies.name = employees.Company
+WHERE employees.Role= 'Graphic Designer';
