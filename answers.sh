@@ -49,19 +49,46 @@ DELETE from students WHERE name="ahmad";
 
 #Joins
 
+#1
 SELECT employees.Name
 FROM employees
 INNER JOIN companies
 ON companies.data > 2000;
 
+#2
 SELECT employees.Name
 FROM employees
 INNER JOIN companies
 ON companies.name = employees.Company
 WHERE companies.Date>2000;
 
+#3
 SELECT companies.Name
 FROM employees
 INNER JOIN companies
 ON companies.name = employees.Company
 WHERE employees.Role= 'Graphic Designer';
+
+#Count & Filter
+
+#1
+SELECT name FROM students
+WHERE Points = (SELECT MAX(Points) FROM students);
+
+#2
+SELECT AVG(Points) FROM students;
+
+#3
+SELECT COUNT(Points)
+FROM students
+WHERE Points=500;
+
+#4
+SELECT name
+FROM students
+WHERE name LIKE '%s%';
+
+#5
+SELECT name, points
+FROM students
+ORDER BY points DESC;
